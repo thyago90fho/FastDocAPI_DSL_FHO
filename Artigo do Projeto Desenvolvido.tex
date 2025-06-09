@@ -1,0 +1,79 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{url}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\begin{document}
+
+\title{FastDocAPI: Uma DSL para Escrita e Geração Rápida de Documentação de APIs REST\\
+{\footnotesize Trabalho N2 - Teoria da Computação e Compiladores}
+}
+
+\author{\IEEEauthorblockN{Thyago Noventa}
+\IEEEauthorblockA{\textit{Engenharia da Computação} \\
+\textit{FHO | Fundação Hermínio Ometto}\\
+Araras, SP \\
+thyagonoventa@alunos.fho.edu.br}
+}
+
+\maketitle
+
+\begin{abstract}
+A documentação de APIs REST é essencial para a comunicação entre equipes de desenvolvimento, mas frequentemente é manual e suscetível a erros e inconsistências. Este trabalho apresenta o FastDocAPI, uma Linguagem Específica de Domínio (DSL) que permite a escrita rápida e padronizada de documentação para APIs REST. A partir de uma sintaxe simples e textual, o FastDocAPI gera automaticamente arquivos de documentação, otimizando o processo e melhorando a produtividade e qualidade da documentação gerada.
+\end{abstract}
+
+\begin{IEEEkeywords}
+DSL, documentação de APIs, APIs REST, geração automática, FastDocAPI, Teoria da Computação
+\end{IEEEkeywords}
+
+\section{Introdução}
+A crescente adoção de APIs REST em aplicações web tem elevado a importância da documentação clara e atualizada para garantir a correta utilização dos serviços. No entanto, a produção manual da documentação demanda tempo e pode gerar inconsistências. Para resolver esses problemas, propomos o FastDocAPI, uma DSL focada em descrever APIs REST de forma simples e padronizada, possibilitando a geração automática de documentação técnica.
+
+Uma DSL é uma linguagem de programação ou especificação dedicada a um domínio de problema específico, projetado para simplificar tarefas dentro desse domínio, na qual são frequentemente criadas para permitir soluções mais intuitivas e eficientes em comparação com linguagens de uso geral quando queremos lidar com tipos específicos de problemas ou processos \cite{jetbrainsDSL}.
+
+Uma API (Interface de Programação de Aplicativo) consiste em um conjunto de comunicações,
+protocolos e sub-rotinas que permitem que diferentes programas de software interajam entre si. APIs podem ser desenvolvidas para vários sistemas para facilitar essa interação. Documentação da API refere-se a um conjunto de instruções técnicas sobre como usá-lo e integrá-lo adequadamente \cite{geeksforgeeksAPI}.
+
+\section{Análise do Artigo-Base}
+O artigo “Domain Specific Language for Creating API Documentation” \cite{martiniuc2024} fundamenta a criação de DSLs para documentação de APIs, destacando benefícios como a redução da complexidade e a padronização do processo. Ele apresenta uma abordagem para modelar APIs através de uma linguagem textual específica, enfatizando a importância da automatização para garantir a qualidade e a produtividade.
+
+\section{Definição do Novo Contexto}
+Inspirado no artigo-base, o FastDocAPI foi desenvolvido para atender às necessidades atuais de documentação de APIs REST, com uma sintaxe clara e simplificada. A linguagem oferece suporte completo para múltiplos tipos de endpoints e métodos HTTP, garantindo versatilidade. A geração da documentação é alinhada às ferramentas mais populares do mercado, promovendo uma maior interação e facilidade de uso.
+
+\section{Adaptação da Abordagem Metodológica}
+
+\subsection{Desenvolvimento da Aplicação}
+O desenvolvimento do FastDocAPI foi dividido em etapas: análise do artigo-base, levantamento dos requisitos para o contexto-alvo, definição da gramática da DSL, implementação do parser e exemplos do gerador de documentação para saídas customizadas (HTML, JSON, YAML, Postman Collection, OpenAPI). A linguagem permite a descrição de rotas, métodos, parâmetros, cabeçalhos, respostas e exemplos, utilizando uma sintaxe simples e legível. A geração da documentação é automatizada por meio da conversão do código fonte da DSL em arquivos HTML, JSON ou YAML, na qual poderão ser importados para ferramentas como Postman e OpenAPI, mas possibilitará o usuário, caso tenha conhecimento para adaptar os exemplos de saídas, para adaptar a interpretação da DSL para o tipo de saída que deseja, alterando as existentes ou criando sua própria.
+
+\subsection{Justificativas das Escolhas Técnicas e Avaliação}
+A escolha por uma DSL textual foi motivada pela sua simplicidade de aprendizado e facilidade de edição, em contraste com abordagens visuais ou baseadas em interfaces gráficas complexas. A análise léxica foi implementada em Python com o uso da biblioteca Lex por meio do pacote PLY (Python Lex-Yacc), o que garantiu robustez, extensibilidade e compatibilidade com padrões consagrados na construção de linguagens. A avaliação da solução considerou critérios como clareza da sintaxe, facilidade de manutenção e capacidade de gerar documentação padronizada de forma automatizada.
+
+\section{Resultados}
+O FastDocAPI demonstrou ser eficaz na geração rápida e padronizada da documentação de APIs REST. A linguagem permitiu a criação de descrições claras e precisas, e o processo automatizado contribuiu para a redução de erros e retrabalho, mostrando-se uma ferramenta útil para apoiar práticas de desenvolvimento ágil.
+
+\section{Conclusão}
+Este trabalho apresentou o FastDocAPI, uma DSL para documentação de APIs REST que promove agilidade, padronização e qualidade na escrita da documentação técnica.
+
+\section{Arquivos do projeto}
+Todos os arquivos do projeto estão salvos e disponíveis em: \url{https://github.com/thyago90fho/FastDocAPI_DSL_FHO} 
+
+\begin{thebibliography}{00}
+
+\bibitem{martiniuc2024} MARTÎNIUC, A.; SAJIN, I.; ROTARI, V. Domain Specific Language for Creating API Documentation. In: TECHNICAL SCIENTIFIC CONFERENCE OF UNDERGRADUATE, MASTER, PHD STUDENTS, Technical University of Moldova, 2024. Anais [...], p. 907--910. Disponível em: \url{https://repository.utm.md/bitstream/handle/5014/28258/Conf-TehStiint-UTM-StudMastDoct-2024-V2-p907-910.pdf}. Acesso em: 08 jun. 2025.
+
+
+\bibitem{jetbrainsDSL} JETBRAINS. Domain-Specific Languages. Disponível em: https://www.jetbrains.com/mps/concepts/domain-specific-languages. Acesso em: 08 jun. 2025.
+
+\bibitem{geeksforgeeksAPI} GEEKSFORGEEKS. What is an API?. Disponível em: https://www.geeksforgeeks.org/what-is-an-api. Acesso em: 08 jun. 2025.
+
+\end{thebibliography}
+
+
+\end{document}
